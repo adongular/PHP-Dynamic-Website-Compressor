@@ -1,0 +1,13 @@
+<modification>
+	<id>DWC Hack</id>
+	<version>1.0</version>
+	<vqmver>2.4.1</vqmver>
+	<author></author>
+
+	<file name="system/library/response.php">
+		<operation>
+			<search position="before"><![CDATA[return gzencode($data, (int)$level);]]></search>
+			<add><![CDATA[$data = compressor_ob_handler($data);]]></add>
+		</operation>
+	</file>
+</modification>
